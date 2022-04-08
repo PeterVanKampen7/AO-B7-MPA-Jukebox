@@ -17,9 +17,14 @@ from django.contrib import admin
 from django.urls import path
 
 from home.views import home_view
+from genre.views import genre_add_view, genre_list_view, genre_detail_view
 
 urlpatterns = [
     path('', home_view, name='home'),
+
+    path('genre/', genre_list_view, name='genre_list'),
+    path('genre/<int:genre_id>/', genre_detail_view, name='genre_detail'),
+    path('genre/new/', genre_add_view, name='genre_add'),
 
     path('admin/', admin.site.urls),
 ]
