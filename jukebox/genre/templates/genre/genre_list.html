@@ -1,0 +1,9 @@
+{% extends 'base.html' %} 
+
+{% block content %}
+
+{% for genre in object_list %}
+{{ genre.name }}
+{% endfor %}
+
+{% endblock %}
