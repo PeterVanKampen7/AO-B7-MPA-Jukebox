@@ -24,7 +24,7 @@ def genre_detail_view(request, genre_id):
     obj = get_object_or_404(Genre, id=genre_id)
 
     context = {
-        'page_title': obj.name,
+        'page_title': f"Genre - {obj.name}",
     }
 
     return render(request, 'genre/genre_detail.html', context)

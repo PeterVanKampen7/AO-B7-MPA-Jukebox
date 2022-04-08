@@ -2,8 +2,21 @@
 
 {% block content %}
 
-{% for genre in object_list %}
-{{ genre.name }}
-{% endfor %}
+<div class="genre_list_container p-4">
+    {% for genre in object_list %}
+
+        <div class="card" style="width: 18rem;">
+            {% comment %} <img class="card-img-top" src="..." alt="Card image cap"> {% endcomment %}
+            <div class="card-body">
+              <h5 class="card-title">{{ genre.name }}</h5>
+              <p class="card-text">{{ genre.description }}</p>
+              <a href="{{ genre.get_absolute_url }}" class="btn">Details</a>
+            </div>
+        </div>
+    
+    {% endfor %}
+</div>
+
+
 
 {% endblock %}
