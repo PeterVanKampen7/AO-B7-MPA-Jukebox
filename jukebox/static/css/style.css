@@ -4,6 +4,14 @@
     box-sizing: border-box;
 }
 
+.btn{
+    background-color: crimson!important;
+    color: white!important;
+}
+
+.header_link{
+    text-decoration: none;
+}
 .top_header{
     width: 100%;
 
@@ -28,6 +36,7 @@
 .top_nav > ul{
     display: flex;
     flex-direction: row;
+    margin-bottom: 0;
 }
 .top_nav ul li{
     display: flex;
@@ -60,6 +69,7 @@
     left: 0;
     bottom: 0;
     transform: translateY(100%);
+    z-index: 99;
 }
 .top_nav .nav_dropdown{
     background-color: white;
