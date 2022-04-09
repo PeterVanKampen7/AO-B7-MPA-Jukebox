@@ -2,6 +2,14 @@
 
 {% block content %}
 
+<div class="add_genre_container">
+    <form action='' method='POST' class='add_genre_form'> 
+        {% csrf_token %}
+        
+        {{ form.as_table }}
+        <input type='submit' value='Save' class='btn'/>
+    </form>
+</div>
 
 
 {% endblock %}

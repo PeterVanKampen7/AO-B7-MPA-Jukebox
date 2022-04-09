@@ -2,6 +2,34 @@
 
 {% block content %}
 
+<div class="genre_detail_container">
+    <div class="genre_detail_left_column">
+        <h1 class="genre_detail_name">
+            {{ object.name }}
+        </h1>
+        <p>
+            {{ object.description }}
+        </p>
+    </div>
+    <div class="genre_detail_right_column">
+        {% load static %}
+        <img src="{% static 'img/placeholder.png' %}" alt="{{ object.name }} logo">
+        <div class="genre_edit_controls_container">
+            <div>
+                <a href="{{ object.get_absolute_url }}edit/" class='genre_edit'>
+                    <i class="fa-solid fa-file-pen"></i>
+                </a>
+            </div>
+            <div>
+                <a href="{{ object.get_absolute_url }}delete/" class='genre_delete'>
+                    <i class="fa-solid fa-trash-can"></i>
+                </a>
+            </div>
+        </div>
+        
+    </div>  
+</div>
+
 
 
 {% endblock %}
