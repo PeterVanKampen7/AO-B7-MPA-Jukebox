@@ -76,6 +76,7 @@
     color: crimson;
     border: 1px solid crimson;
     width: 100%;
+    padding-left: 0;
 }
 .top_nav .nav_dropdown li{
     background-color: white;
@@ -99,4 +100,28 @@
 
 .top_nav ul li:hover > .nav_dropdown{
     display: block;
+}
+
+.genre_list_container{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+.genre_list_container > *{
+    margin: 10px;
+}
+
+.add_genre_container{
+    display: flex;
+    justify-content: center;
+
+    width: 100%;
+}
+.add_genre_form{
+    display: inline-flex;
+    flex-direction: column;
+    padding-top: 25px;
+}
+.add_genre_form input, .add_genre_form textarea{
+    margin: 6px 0;
 }
