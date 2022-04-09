@@ -6,7 +6,6 @@ from .forms import GenreForm
 # Create your views here.
 def genre_add_view(request):
     form = GenreForm(request.POST or None)
-    message = ''
 
     if form.is_valid():
         form.save()

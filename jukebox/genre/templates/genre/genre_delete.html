@@ -2,6 +2,15 @@
 
 {% block content %}
 
-
+<div class="delete_genre_container">
+    <h4>
+        Are you sure you want to delete {{ object.name }}?
+    </h4>
+    <form action='' method='POST' class='delete_genre_form'> 
+        {% csrf_token %}
+        
+        <input type='submit' value='Delete this genre' class='btn'/>
+    </form>
+</div>
 
 {% endblock %}
