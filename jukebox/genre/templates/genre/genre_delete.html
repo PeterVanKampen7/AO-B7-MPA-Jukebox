@@ -4,11 +4,12 @@
 
 <div class="delete_genre_container">
     <h4>
-        Are you sure you want to delete {{ object.name }}?
+        Are you sure you want to delete the genre {{ object.name }}?
     </h4>
     <form action='' method='POST' class='delete_genre_form'> 
         {% csrf_token %}
         
+        <a href="{{ object.get_absolute_url }}" class="btn btn-primary back_button">Back</a>
         <input type='submit' value='Delete this genre' class='btn'/>
     </form>
 </div>

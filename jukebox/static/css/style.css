@@ -177,3 +177,16 @@
 .genre_detail_right_column a.genre_delete{
     background-color: crimson;
 }
+
+.delete_genre_container{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 10px;
+    padding: 50px;
+}
+.delete_genre_container form.delete_genre_form a.back_button{
+    color: #fff!important;
+    background-color: #0d6efd!important;
+    border-color: #0d6efd!important;
+}
