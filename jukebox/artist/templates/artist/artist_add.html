@@ -1,0 +1,18 @@
+{% extends 'base.html' %} 
+
+{% block content %}
+
+<div class="add_container">
+    <h2 class="add_title">
+        Add a new artist
+    </h2>
+    <form action='' method='POST' class='add_form'> 
+        {% csrf_token %}
+        
+        {{ form.as_table }}
+        <input type='submit' value='Save' class='btn'/>
+    </form>
+</div>
+
+
+{% endblock %}

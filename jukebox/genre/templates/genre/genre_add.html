@@ -2,8 +2,11 @@
 
 {% block content %}
 
-<div class="add_genre_container">
-    <form action='' method='POST' class='add_genre_form'> 
+<div class="add_container">
+    <h2 class="add_title">
+        Add a new genre
+    </h2>
+    <form action='' method='POST' class='add_form'> 
         {% csrf_token %}
         
         {{ form.as_table }}

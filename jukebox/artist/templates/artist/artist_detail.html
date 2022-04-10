@@ -1,0 +1,43 @@
+{% extends 'base.html' %} 
+
+{% block content %}
+
+<div class="detail_container">
+    <div class="detail_left_column">
+        <h1 class="detail_name">
+            {{ object.name }}
+        </h1>
+        <p>
+            {{ object.description }}
+        </p>
+    </div>
+    <div class="detail_right_column">
+        {% load static %}
+        <img src="{% static 'img/placeholder.png' %}" alt="{{ object.name }} logo">
+        <div class="edit_controls_container">
+            <div>
+                <a href="{{ object.get_absolute_url }}edit/" class='edit'>
+                    <i class="fa-solid fa-file-pen"></i>
+                </a>
+            </div>
+            <div>
+                <a href="{{ object.get_absolute_url }}delete/" class='delete'>
+                    <i class="fa-solid fa-trash-can"></i>
+                </a>
+            </div>
+        </div>
+        
+    </div>  
+    <div class="detail_songs">
+        <h2>
+            {{ object.name }} songs
+        </h2>
+        <ul>
+
+        </ul>
+    </div>
+</div>
+
+
+
+{% endblock %}

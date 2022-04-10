@@ -1,0 +1,17 @@
+{% extends 'base.html' %} 
+
+{% block content %}
+
+<div class="delete_container">
+    <h4>
+        Are you sure you want to delete the artist {{ object.name }}?
+    </h4>
+    <form action='' method='POST' class='delete_form'> 
+        {% csrf_token %}
+        
+        <a href="{{ object.get_absolute_url }}" class="btn btn-primary back_button">Back</a>
+        <input type='submit' value='Delete this artist' class='btn'/>
+    </form>
+</div>
+
+{% endblock %}

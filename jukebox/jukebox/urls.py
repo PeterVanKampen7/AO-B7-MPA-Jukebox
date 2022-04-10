@@ -22,8 +22,15 @@ from genre.views import (
     genre_list_view, 
     genre_detail_view, 
     genre_edit_view, 
-    genre_delete_view
-    )
+    genre_delete_view,
+)
+from artist.views import (
+    artist_add_view,
+    artist_list_view,
+    artist_detail_view,
+    artist_edit_view,
+    artist_delete_view,
+)
 
 urlpatterns = [
     path('', home_view, name='home'),
@@ -33,6 +40,13 @@ urlpatterns = [
     path('genre/<int:genre_id>/edit/', genre_edit_view, name='genre_edit'),
     path('genre/<int:genre_id>/delete/', genre_delete_view, name='genre_delete'),
     path('genre/new/', genre_add_view, name='genre_add'),
+
+    path('artist/', artist_list_view, name='artist_list'),
+    path('artist/<int:artist_id>/', artist_detail_view, name='artist_detail'),
+    path('artist/<int:artist_id>/edit/', artist_edit_view, name='artist_edit'),
+    path('artist/<int:artist_id>/delete/', artist_delete_view, name='artist_delete'),
+    path('artist/new/', artist_add_view, name='artist_add'),
+    
 
     path('admin/', admin.site.urls),
 ]
