@@ -5,7 +5,7 @@ from .forms import GenreForm
 
 # Create your views here.
 def genre_add_view(request):
-    form = GenreForm(request.POST or None)
+    form = GenreForm(request.POST or None, request.FILES or None)
 
     if form.is_valid():
         form.save()
@@ -41,7 +41,7 @@ def genre_detail_view(request, genre_id):
 def genre_edit_view(request, genre_id):
     obj = get_object_or_404(Genre, id=genre_id)  
 
-    form = GenreForm(request.POST or None, instance=obj)
+    form = GenreForm(request.POST or None, request.FILES or None, instance=obj)
     if form.is_valid() and request.method == 'POST':
         form.save()
         return redirect('/genre')

@@ -4,7 +4,7 @@ from .models import Artist
 
 # Create your views here.
 def artist_add_view(request):
-    form = ArtistForm(request.POST or None)
+    form = ArtistForm(request.POST or None, request.FILES or None)
 
     if form.is_valid():
         form.save()
@@ -40,7 +40,7 @@ def artist_detail_view(request, artist_id):
 def artist_edit_view(request, artist_id):
     obj = get_object_or_404(Artist, id=artist_id)  
 
-    form = ArtistForm(request.POST or None, instance=obj)
+    form = ArtistForm(request.POST or None, request.FILES or None, instance=obj)
     if form.is_valid() and request.method == 'POST':
         form.save()
         return redirect('/artist')

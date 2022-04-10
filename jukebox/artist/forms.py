@@ -10,7 +10,7 @@ class ArtistForm(forms.ModelForm):
             'description',
             'age',
             'nationality',
-            'image',
+            'image'
         ]
 
     # name       = forms.CharField(
