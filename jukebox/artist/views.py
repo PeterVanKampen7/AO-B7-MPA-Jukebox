@@ -57,7 +57,7 @@ def artist_delete_view(request, artist_id):
 
     if request.method == 'POST':
         obj.delete()
-        return redirect('/genre')
+        return redirect('/artist')
 
     context = {
         'page_title': f"Delete artist - {obj.name}",

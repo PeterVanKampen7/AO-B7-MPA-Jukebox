@@ -7,6 +7,7 @@ class Artist(models.Model):
     description = models.TextField()
     age = models.IntegerField()
     nationality = models.CharField(max_length=30)
+    image = models.ImageField(upload_to='images/artists/', default='/static/img/placeholder.png')  
 
     def get_absolute_url(self):
         return reverse("artist_detail", kwargs={"artist_id": self.id})

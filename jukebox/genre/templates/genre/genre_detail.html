@@ -12,8 +12,7 @@
         </p>
     </div>
     <div class="detail_right_column">
-        {% load static %}
-        <img src="{% static 'img/placeholder.png' %}" alt="{{ object.name }} logo">
+        <img src="{{ object.image.url }}" alt="{{ object.name }} logo">
         <div class="edit_controls_container">
             <div>
                 <a href="{{ object.get_absolute_url }}edit/" class='edit'>

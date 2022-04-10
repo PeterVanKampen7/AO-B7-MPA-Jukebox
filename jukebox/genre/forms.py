@@ -7,7 +7,8 @@ class GenreForm(forms.ModelForm):
         model = Genre
         fields = [
             'name',
-            'description'
+            'description',
+            'image',
         ]
 
     name       = forms.CharField(
