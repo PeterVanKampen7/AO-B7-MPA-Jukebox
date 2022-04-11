@@ -11,7 +11,6 @@ class SongForm(forms.ModelForm):
         fields = [
             'name',
             'link',
-            'image',
             'artist',
             'genre',
         ]
@@ -22,11 +21,6 @@ class SongForm(forms.ModelForm):
 
     link = forms.CharField(
         label = 'Enter youtube id for this song:',
-    )
-
-    image = forms.ImageField(
-        label = 'Song cover:',
-        required = False,
     )
 
     artist = forms.ModelChoiceField(

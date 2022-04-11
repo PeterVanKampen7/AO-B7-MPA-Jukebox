@@ -10,7 +10,6 @@ from genre.models import Genre
 class Song(models.Model):
     name = models.CharField(max_length=30)
     link = models.CharField(max_length=11)
-    image = models.ImageField(upload_to='images/genres/', default='/images/default/placeholder.png')  
 
     views = models.IntegerField(default=0, editable=False)
     dateAdded = models.DateField(default=timezone.now, editable=False) 

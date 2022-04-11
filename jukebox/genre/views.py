@@ -31,9 +31,12 @@ def genre_list_view(request):
 def genre_detail_view(request, genre_id):
     obj = get_object_or_404(Genre, id=genre_id)
 
+    songs = obj.song_set.all()
+
     context = {
         'page_title': f"Genre - {obj.name}",
-        'object': obj,
+        'object': obj, 
+        'song_list': songs,
     }
 
     return render(request, 'genre/genre_detail.html', context)

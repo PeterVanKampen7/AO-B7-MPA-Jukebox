@@ -32,7 +32,13 @@
             {{ object.name }} songs
         </h2>
         <ul>
-
+            {% for song in song_list %}
+            
+            <li>
+                {{ song.name }}
+            </li>
+        
+            {% endfor %}
         </ul>
     </div>
 </div>

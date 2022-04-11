@@ -30,9 +30,12 @@ def artist_list_view(request):
 def artist_detail_view(request, artist_id):
     obj = get_object_or_404(Artist, id=artist_id)
 
+    songs = obj.song_set.all()
+
     context = {
         'page_title': f'Artist - {obj.name}',
         'object': obj,
+        'song_list': songs,
     }
 
     return render(request, 'artist/artist_detail.html', context)

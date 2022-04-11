@@ -4,18 +4,17 @@
 
 <div class="detail_container">
     <div class="detail_left_column">
-        <h4>
-            {{ object.artist.name }}
-        </h4>
         <h1 class="detail_name">
             {{ object.name }}
         </h1>
         <p>
             Views: {{ object.views }}
+            <br>
+            Date added: {{ object.dateAdded }}
         </p>
 
-        <div id="player"></div>
 
+        <div id="player"></div>
         <script>
             // 2. This code loads the IFrame Player API code asynchronously.
             var tag = document.createElement('script');
@@ -40,7 +39,10 @@
 
     </div>
     <div class="detail_right_column">
-        <img src="{{ object.image.url }}" alt="{{ object.name }} logo">
+        <h4>
+            {{ object.artist.name }}
+        </h4>
+        <img src="{{ object.artist.image.url }}" alt="{{ object.name }} logo">
         <div class="edit_controls_container">
             <div>
                 <a href="{{ object.get_absolute_url }}edit/" class='edit'>

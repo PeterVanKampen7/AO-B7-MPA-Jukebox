@@ -39,7 +39,7 @@ from song.views import (
     song_list_view,
     song_detail_view,
     song_edit_view,
-    
+    song_delete_view,
 )
 
 urlpatterns = [
@@ -59,7 +59,8 @@ urlpatterns = [
     
     path('song/', song_list_view, name='song_list'),
     path('song/<int:song_id>/', song_detail_view, name='song_detail'),
-    path('song/<int:song_id>/edit/', song_edit_view, name='sonG_edit'),
+    path('song/<int:song_id>/edit/', song_edit_view, name='song_edit'),
+    path('song/<int:song_id>/delete/', song_delete_view, name='song_delete'),
     path('song/new/', song_add_view, name='song_add'),
 
     path('admin/', admin.site.urls),

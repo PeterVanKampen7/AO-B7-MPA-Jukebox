@@ -5,7 +5,6 @@ from django.urls import reverse
 class Artist(models.Model):
     name = models.CharField(max_length=30, unique=True)
     description = models.TextField()
-    age = models.IntegerField()
     nationality = models.CharField(max_length=30)
     image = models.ImageField(upload_to='images/artists/', default='/images/default/placeholder.png')  
 
