@@ -14,7 +14,6 @@
             Views: {{ object.views }}
         </p>
 
-
         <div id="player"></div>
 
         <script>
@@ -32,12 +31,12 @@
                 player = new YT.Player('player', {
                     height: '390',
                     width: '640',
-                    videoId: 'usrFCZpRwGo',
+                    videoId: '{{ object.link }}',
                 });
             }
             
 
-        </script>
+        </script> 
 
     </div>
     <div class="detail_right_column">

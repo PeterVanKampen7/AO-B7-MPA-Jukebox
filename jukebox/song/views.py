@@ -29,6 +29,9 @@ def song_list_view(request):
 
 def song_detail_view(request, song_id):
     obj = get_object_or_404(Song, id=song_id)
+    
+    obj.views += 1
+    obj.save()
 
     context = {
         'page_title': f'Song - {obj.name}',
@@ -38,7 +41,7 @@ def song_detail_view(request, song_id):
     return render(request, 'song/song_detail.html', context)
 
 def song_edit_view(request, song_id):
-    obj = Song.objects.get(id=song_id)
+    obj = get_object_or_404(Song, id=song_id)
 
     form = SongForm(request.POST or None, request.FILES or None, instance=obj)
 
@@ -52,3 +55,17 @@ def song_edit_view(request, song_id):
     }
 
     return render(request, 'song/song_add.html', context)
+
+def song_delete_view(request, song_id):
+    obj = get_object_or_404(Song, id=song_id)
+
+    if request.method == 'POST':
+        obj.delete()
+        return redirect('/song')
+
+    context = {
+        'page_title': f"Delete song - {obj.name}",
+        'object': obj,
+    }
+
+    return render(request, 'song/song_delete.html', context)
