@@ -115,12 +115,12 @@
     display: block;
 }
 
-.genre_list_container{
+.list_container{
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
 }
-.genre_list_container > *{
+.list_container > *{
     margin: 10px;
 }
 
