@@ -1,0 +1,63 @@
+{% extends 'base.html' %} 
+
+{% block content %}
+
+<div class="detail_container">
+    <div class="detail_left_column">
+        <h4>
+            {{ object.artist.name }}
+        </h4>
+        <h1 class="detail_name">
+            {{ object.name }}
+        </h1>
+        <p>
+            Views: {{ object.views }}
+        </p>
+
+
+        <div id="player"></div>
+
+        <script>
+            // 2. This code loads the IFrame Player API code asynchronously.
+            var tag = document.createElement('script');
+
+            tag.src = "https://www.youtube.com/iframe_api";
+            var firstScriptTag = document.getElementsByTagName('script')[0];
+            firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+            // 3. This function creates an <iframe> (and YouTube player)
+            //    after the API code downloads.
+            var player;
+            function onYouTubeIframeAPIReady() {
+                player = new YT.Player('player', {
+                    height: '390',
+                    width: '640',
+                    videoId: 'usrFCZpRwGo',
+                });
+            }
+            
+
+        </script>
+
+    </div>
+    <div class="detail_right_column">
+        <img src="{{ object.image.url }}" alt="{{ object.name }} logo">
+        <div class="edit_controls_container">
+            <div>
+                <a href="{{ object.get_absolute_url }}edit/" class='edit'>
+                    <i class="fa-solid fa-file-pen"></i>
+                </a>
+            </div>
+            <div>
+                <a href="{{ object.get_absolute_url }}delete/" class='delete'>
+                    <i class="fa-solid fa-trash-can"></i>
+                </a>
+            </div>
+        </div>
+        
+    </div>  
+</div>
+
+
+
+{% endblock %}

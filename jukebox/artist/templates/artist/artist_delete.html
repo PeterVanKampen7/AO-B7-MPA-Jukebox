@@ -6,6 +6,9 @@
     <h4>
         Are you sure you want to delete the artist {{ object.name }}?
     </h4>
+    <p>
+        All songs from this artist will also be deleted
+    </p>
     <form action='' method='POST' class='delete_form'> 
         {% csrf_token %}
         

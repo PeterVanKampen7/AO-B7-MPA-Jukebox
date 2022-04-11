@@ -34,6 +34,12 @@ from artist.views import (
     artist_edit_view,
     artist_delete_view,
 )
+from song.views import (
+    song_add_view,
+    song_list_view,
+    song_detail_view,
+    song_edit_view,
+)
 
 urlpatterns = [
     path('', home_view, name='home'),
@@ -50,6 +56,10 @@ urlpatterns = [
     path('artist/<int:artist_id>/delete/', artist_delete_view, name='artist_delete'),
     path('artist/new/', artist_add_view, name='artist_add'),
     
+    path('song/', song_list_view, name='song_list'),
+    path('song/<int:song_id>/', song_detail_view, name='song_detail'),
+    path('song/<int:song_id>/edit/', song_edit_view, name='sonG_edit'),
+    path('song/new/', song_add_view, name='song_add'),
 
     path('admin/', admin.site.urls),
 ]

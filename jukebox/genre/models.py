@@ -3,7 +3,7 @@ from django.urls import reverse
 
 # Create your models here.
 class Genre(models.Model):
-    name       = models.CharField(max_length=30)
+    name       = models.CharField(max_length=30, unique=True)
     description = models.TextField(blank=True, null=True)
     image = models.ImageField(upload_to='images/genres/', default='/images/default/placeholder.png')  
 

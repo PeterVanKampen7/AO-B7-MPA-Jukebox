@@ -3,7 +3,7 @@ from django.urls import reverse
 
 # Create your models here.
 class Artist(models.Model):
-    name = models.CharField(max_length=30)
+    name = models.CharField(max_length=30, unique=True)
     description = models.TextField()
     age = models.IntegerField()
     nationality = models.CharField(max_length=30)

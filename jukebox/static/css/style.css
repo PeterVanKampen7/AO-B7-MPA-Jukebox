@@ -139,7 +139,8 @@
     flex-direction: column;
     padding-top: 25px;
 }
-.add_form input, .add_form textarea{
+.add_form input, .add_form textarea,
+.add_form select, .add_form ul{
     margin: 6px 0;
 }
 
@@ -196,4 +197,24 @@
     color: #fff!important;
     background-color: #0d6efd!important;
     border-color: #0d6efd!important;
+}
+
+ul#id_genre {
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    padding-left: 5px;
+}
+
+ul#id_genre li{
+    width: calc(100% / 3);
+}
+
+ul.errorlist li{
+    color: crimson;
+}
+ul.errorlist li::marker{
+    display: none;
 }
