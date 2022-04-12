@@ -8,6 +8,8 @@ class Artist(models.Model):
     nationality = models.CharField(max_length=30)
     image = models.ImageField(upload_to='images/artists/', default='/images/default/placeholder.png')  
 
+    clicks = models.IntegerField(editable = False, default = 0)
+
     def get_absolute_url(self):
         return reverse("artist_detail", kwargs={"artist_id": self.id})
 

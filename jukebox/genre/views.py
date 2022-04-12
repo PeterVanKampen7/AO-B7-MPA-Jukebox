@@ -31,6 +31,9 @@ def genre_list_view(request):
 def genre_detail_view(request, genre_id):
     obj = get_object_or_404(Genre, id=genre_id)
 
+    obj.clicks += 1
+    obj.save()
+
     songs = obj.song_set.all()
     songs = sorted(songs, key = lambda x: x.views, reverse = True)
 

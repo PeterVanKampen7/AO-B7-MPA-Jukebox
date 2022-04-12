@@ -7,6 +7,8 @@ class Genre(models.Model):
     description = models.TextField(blank=True, null=True)
     image = models.ImageField(upload_to='images/genres/', default='/images/default/placeholder.png')  
 
+    clicks = models.IntegerField(editable = False, default = 0)
+
     def get_absolute_url(self):
         return reverse("genre_detail", kwargs={"genre_id": self.id})
 
