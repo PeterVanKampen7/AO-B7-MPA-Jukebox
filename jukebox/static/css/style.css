@@ -222,3 +222,28 @@ ul.errorlist li{
 ul.errorlist li::marker{
     display: none;
 }
+
+div.detail_songs{
+    width: 70%;
+}
+ul.detail_song_list{
+    width: 100%;
+    padding-left: 5px;
+    padding-top: 10px;
+}
+a.detail_song_list_link{
+    color: black;
+    text-decoration: none;
+}
+li.detail_song_list_item{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+
+    border-bottom: 1px solid rgb(209, 209, 209);
+    padding: 0 10px;
+}
+li.detail_song_list_item p{
+    margin-top: 1rem;
+}

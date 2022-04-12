@@ -27,16 +27,37 @@
         </div>
         
     </div>  
+
     <div class="detail_songs">
         <h2>
             {{ object.name }} songs
         </h2>
         <ul class='detail_song_list'>
+            <li class='detail_song_list_item'>
+                <p>
+                    <b>
+                        Name:
+                    </b>              
+                </p>
+                <p>
+                    <b>
+                        Views:
+                    </b>           
+                </p>
+            </li>
             {% for song in song_list %}
             
-            <li>
-                {{ song.name }}
-            </li>
+            <a href="{{ song.get_absolute_url }}" class='detail_song_list_link'>
+                <li class='detail_song_list_item'>
+                    <p>
+                        {{ song.name }}
+                    </p>
+                    <p>
+                        {{ song.views }}
+                    </p>  
+                </li>
+            </a>
+            
         
             {% endfor %}
         </ul>
