@@ -16,12 +16,12 @@
         <img src="{{ object.image.url }}" alt="{{ object.name }} logo">
         <div class="edit_controls_container">
             <div>
-                <a href="{{ object.get_absolute_url }}edit/" class='edit'>
+                <a href="{{ object.get_absolute_url }}edit/" class='edit crud_buttons'>
                     <i class="fa-solid fa-file-pen"></i>
                 </a>
             </div>
             <div>
-                <a href="{{ object.get_absolute_url }}delete/" class='delete'>
+                <a href="{{ object.get_absolute_url }}delete/" class='delete crud_buttons'>
                     <i class="fa-solid fa-trash-can"></i>
                 </a>
             </div>
@@ -32,7 +32,7 @@
         <h2>
             {{ object.name }} songs
         </h2>
-        <ul>
+        <ul class='detail_song_list'>
             {% for song in song_list %}
             
             <li>

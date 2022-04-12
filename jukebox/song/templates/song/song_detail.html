@@ -39,18 +39,20 @@
 
     </div>
     <div class="detail_right_column">
-        <h4>
-            {{ object.artist.name }}
-        </h4>
+        <a href="{{ object.artist.get_absolute_url }}" class='song_artist_name'>
+            <h4>
+                {{ object.artist.name }}
+            </h4>
+        </a>
         <img src="{{ object.artist.image.url }}" alt="{{ object.name }} logo">
         <div class="edit_controls_container">
             <div>
-                <a href="{{ object.get_absolute_url }}edit/" class='edit'>
+                <a href="{{ object.get_absolute_url }}edit/" class='edit crud_buttons'>
                     <i class="fa-solid fa-file-pen"></i>
                 </a>
             </div>
             <div>
-                <a href="{{ object.get_absolute_url }}delete/" class='delete'>
+                <a href="{{ object.get_absolute_url }}delete/" class='delete crud_buttons'>
                     <i class="fa-solid fa-trash-can"></i>
                 </a>
             </div>
