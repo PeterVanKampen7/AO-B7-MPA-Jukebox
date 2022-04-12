@@ -31,6 +31,7 @@ def artist_detail_view(request, artist_id):
     obj = get_object_or_404(Artist, id=artist_id)
 
     songs = obj.song_set.all()
+    songs = sorted(songs, key = lambda x: x.views, reverse = True)
 
     context = {
         'page_title': f'Artist - {obj.name}',
