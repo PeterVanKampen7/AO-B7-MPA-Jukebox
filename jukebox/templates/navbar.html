@@ -20,10 +20,10 @@
             Songs
             <ul class='nav_dropdown'>
                 <li> 
-                    <a href="/song/new">Add new song</a>
+                    <a href="{% url 'song_add' %}">Add new song</a>
                 </li>
                 <li>
-                    <a href="/song">View songs</a>
+                    <a href="{% url 'song_list' %}">View songs</a>
                 </li>
             </ul>
         </li>
@@ -31,10 +31,10 @@
             Genres
             <ul class='nav_dropdown'>
                 <li> 
-                    <a href="/genre/new">Add new genre</a>
+                    <a href="{% url 'genre_add' %}">Add new genre</a>
                 </li>
                 <li>
-                    <a href="/genre">View genres</a>
+                    <a href="{% url 'genre_list' %}">View genres</a>
                 </li>
             </ul>
         </li>
@@ -42,10 +42,10 @@
             Artists
             <ul class='nav_dropdown'>
                 <li> 
-                    <a href="/artist/new">Add new artist</a>
+                    <a href="{% url 'artist_add' %}">Add new artist</a>
                 </li>
                 <li>
-                    <a href="/artist">View artists</a>
+                    <a href="{% url 'artist_list' %}">View artists</a>
                 </li>
             </ul>
         </li>
