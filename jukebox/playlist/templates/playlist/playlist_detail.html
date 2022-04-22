@@ -1,0 +1,43 @@
+{% extends 'base.html' %} 
+
+{% block content %}
+
+<div class="detail_container">
+    <div class="detail_left_column">
+        <h1 class="detail_name">
+            {{ object.name }}
+        </h1>
+        <p>
+            {{ object.description }}
+        </p>
+        <h3>Songs</h3>
+        <ul>
+            {% for song in object.songs.all %}
+                <li>
+                    {{ song.name }}
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+    <div class="detail_right_column">
+        <div class="edit_controls_container">
+            <div>
+                <a href="{{ object.get_absolute_url }}edit/" class='edit crud_buttons'>
+                    <i class="fa-solid fa-file-pen"></i>
+                </a>
+            </div>
+            <div>
+                <a href="{{ object.get_absolute_url }}delete/" class='delete crud_buttons'>
+                    <i class="fa-solid fa-trash-can"></i>
+                </a>
+            </div>
+        </div>
+        
+    </div>  
+
+    
+</div>
+
+
+
+{% endblock %}

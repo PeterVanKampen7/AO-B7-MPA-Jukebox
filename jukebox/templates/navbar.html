@@ -1,4 +1,4 @@
-<a href="/" class='header_link'>
+<a href="{% url 'home' %}" class='header_link'>
     <header class="top_header">
         <div class='font_a_logo'>
             <i class="fa-brands fa-spotify"></i>
@@ -53,10 +53,10 @@
             Playlists
             <ul class='nav_dropdown'>
                 <li> 
-                    <a href="#">Add new playlist</a>
+                    <a href="{% url 'playlist_add' %}">Add new playlist</a>
                 </li>
                 <li>
-                    <a href="#">View playlists</a>
+                    <a href="{% url 'playlist_list' %}">View playlists</a>
                 </li>
             </ul>
         </li>
