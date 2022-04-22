@@ -1,0 +1,60 @@
+{% extends 'base.html' %} 
+
+{% block content %}
+
+<div class="queue_container">
+    <div class='queue_left_column'>
+        <h2>Queue</h2>
+        <div class='queue_buttons'>
+            <form action="{% url 'queue_detail' %}" method='POST'>
+                {% csrf_token %}
+                <input type="submit" value="Clear queue" name='clear_queue' class='btn'>
+                <input type="submit" value="Save this queue as playlist" name='save_queue' class='btn'>
+            </form>
+        </div>
+        <ul>     
+            {% for song in queue %}
+                
+                {% if forloop.counter0 == current_song_index %}
+                    <li class='current_song_in_list'>
+                        {{ song.name }}
+                    </li> 
+                {% else %}
+                    <li>
+                        {{ song.name }}
+                    </li> 
+                {% endif %}
+        
+            {% endfor %}
+        </ul>
+    </div>
+    
+    <div class='queue_right_column'>
+        <h2>Now playing</h2>
+        <h4>{{ current_song.name }}</h4>
+        <div id="player"></div>
+        <script>
+            // 2. This code loads the IFrame Player API code asynchronously.
+            var tag = document.createElement('script');
+    
+            tag.src = "https://www.youtube.com/iframe_api";
+            var firstScriptTag = document.getElementsByTagName('script')[0];
+            firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+    
+            // 3. This function creates an <iframe> (and YouTube player)
+            //    after the API code downloads.
+            var player;
+            function onYouTubeIframeAPIReady() {
+                player = new YT.Player('player', {
+                    height: '200',
+                    width: '250',
+                    videoId: '{{ current_song.link }}',
+                });
+            }
+            
+    
+        </script> 
+    </div>
+</div>
+
+{% endblock %}

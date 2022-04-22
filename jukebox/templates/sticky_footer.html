@@ -1,0 +1,31 @@
+<div class="sticky_footer">
+    
+    <a href="{% url 'queue_detail' %}">
+        
+        {% if  current_song %}
+            <div>
+                <p>
+                    Current song:
+                </p>
+
+                <p>
+                    {{ current_song.name }}
+                </p>
+            </div>
+            
+        {% else %}
+            <h3>Queue</h3>
+        {% endif %}
+        
+    </a>
+    {% if  current_song %}
+        <div class='queue_control'>
+            <form action="{% url 'queue_detail' %}" method='POST'>
+                {% csrf_token %}
+                <button type="submit" name='next_song' value='next'>
+                    <i class="fa-solid fa-forward"></i>
+                </button>
+            </form> 
+        </div>
+    {% endif %}
+</div>

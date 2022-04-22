@@ -247,3 +247,74 @@ li.detail_song_list_item{
 li.detail_song_list_item p{
     margin-top: 1rem;
 }
+
+.sticky_footer{
+    position: fixed;
+    bottom: 0;
+    right: 30px;
+    width: 350px;
+    height: 75px;
+    background-color: crimson;
+    padding: 1em;
+    color: white;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;  
+}
+.sticky_footer *{
+    color: white!important;
+    padding: 0;
+    margin: 0;
+    text-decoration: none; 
+}
+.queue_control{
+    width: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.queue_control button{
+    background-color: transparent;
+    border: none;
+    font-size: 1.7em;
+}
+
+
+.add_to_queue_btn{
+    margin-bottom: 20px;
+}
+
+.queue_container{
+    display: flex;
+    flex-direction: row;
+    padding: 50px;
+}
+.queue_left_column{
+    flex-grow: 1;
+}
+.queue_left_column ul{
+    list-style: none;
+    padding-right: 50px;
+    margin-top: 30px;
+}
+.queue_left_column li{
+    padding: 10px;
+    padding-left: 20px;
+    display: flex;
+    flex-direction: row;
+}
+.queue_left_column li:nth-child(2n){
+    background-color: rgb(211, 211, 211);
+}
+.queue_right_column{
+    min-width: 250px;
+    width: 20%;
+}
+.current_song_in_list{
+    background-color: crimson!important;
+    color: white;
+}
+.queue_buttons{
+    display: flex;
+    flex-direction: row;
+}

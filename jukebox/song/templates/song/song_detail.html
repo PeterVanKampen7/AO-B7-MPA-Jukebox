@@ -12,7 +12,11 @@
             <br>
             Date added: {{ object.dateAdded }}
         </p>
-
+        <form action="{{ object.get_absolute_url }}" method='POST'>
+            {% csrf_token %}
+            <input type="hidden" name="song_id" value='{{ object.id }}'>
+            <input type="submit" value="Add this song to the queue" name='addToQueue' class='add_to_queue_btn btn'>
+        </form>
 
         <div id="player"></div>
         <script>

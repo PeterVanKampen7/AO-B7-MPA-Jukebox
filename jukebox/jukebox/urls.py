@@ -48,6 +48,9 @@ from playlist.views import (
     playlist_edit_view,
     playlist_delete_view,
 )
+from song_queue.views import (
+    queue_detail,
+)
 
 urlpatterns = [
     path('', home_view, name='home'),
@@ -75,6 +78,8 @@ urlpatterns = [
     path('playlist/<int:playlist_id>/edit/', playlist_edit_view, name='playlist_edit'),
     path('playlist/<int:playlist_id>/delete/', playlist_delete_view, name='playlist_delete'),
     path('playlist/new/', playlist_add_view, name='playlist_add'),
+
+    path('song_queue/', queue_detail, name='queue_detail'),
     
     path('admin/', admin.site.urls),
     path("accounts/", include("django.contrib.auth.urls")),

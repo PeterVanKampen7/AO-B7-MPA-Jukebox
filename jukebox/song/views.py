@@ -1,4 +1,6 @@
 from django.shortcuts import get_object_or_404, redirect, render
+
+from song_queue.song_queue import SongQueue
 from .models import Song
 from .forms import SongForm
 
@@ -28,6 +30,9 @@ def song_list_view(request):
     return render(request, 'song/song_list.html', context)
 
 def song_detail_view(request, song_id):
+    
+    add_song_to_queue(request)
+
     obj = get_object_or_404(Song, id=song_id)
     
     obj.views += 1
@@ -69,3 +74,8 @@ def song_delete_view(request, song_id):
     }
 
     return render(request, 'song/song_delete.html', context)
+
+
+def add_song_to_queue(request):
+    if request.POST.get('addToQueue', ''):
+        SongQueue.addSong(request)   
