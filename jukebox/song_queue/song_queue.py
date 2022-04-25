@@ -33,3 +33,5 @@ class SongQueue():
         for song_id in song_id_list:
             new.songs.add(get_object_or_404(Song, id = song_id))
         new.save()
+
+        return new
