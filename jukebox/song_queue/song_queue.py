@@ -1,5 +1,6 @@
 from django.shortcuts import get_object_or_404
 from song.models import Song
+from playlist.models import Playlist
 
 class SongQueue():
 
@@ -24,6 +25,10 @@ class SongQueue():
         request.session.modified = True
 
     @staticmethod
-    def saveAsPlaylist():
-
-        print()
+    def saveAsPlaylist(song_id_list, playlist_name):
+        new = Playlist(name = playlist_name)
+        new.save()
+        
+        for loop_id in song_id_list:
+            new.songs.add(get_object_or_404(Song, id = loop_id))
+        new.save()

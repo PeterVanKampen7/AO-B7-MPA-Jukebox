@@ -5,7 +5,6 @@ from song.models import Song
 # Create your models here.
 class Playlist(models.Model):
     name = models.CharField(max_length=30)
-    description = models.TextField(blank=True, null=True)
 
     songs = models.ManyToManyField(Song)
 

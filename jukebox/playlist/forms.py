@@ -7,6 +7,5 @@ class PlaylistForm(forms.ModelForm):
         model = Playlist
         fields = [
             'name',
-            'description',
             'songs',
         ]

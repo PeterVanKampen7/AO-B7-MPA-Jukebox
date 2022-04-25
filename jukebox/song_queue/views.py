@@ -12,7 +12,7 @@ def queue_detail(request):
         SongQueue.clearQueue(request)
 
     if request.POST.get('save_queue',''):
-        print('save')
+        SongQueue.saveAsPlaylist(request.session['queue'], request.POST.get('new_playlist_name', ''))
 
     song_id_list = request.session['queue'] or None
     song_list = []
