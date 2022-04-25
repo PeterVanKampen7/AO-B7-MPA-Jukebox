@@ -12,10 +12,29 @@
         </p>
         <h3>Songs</h3>
         <ul>
+            <li class='detail_song_list_item'>
+                <p>
+                    <b>
+                        Name:
+                    </b>              
+                </p>
+                <p>
+                    <b>
+                        Views:
+                    </b>           
+                </p>
+            </li>
             {% for song in object.songs.all %}
-                <li>
-                    {{ song.name }}
+            <a href="{{ song.get_absolute_url }}" class='detail_song_list_link'>
+                <li class='detail_song_list_item'>
+                    <p>
+                        {{ song.name }}
+                    </p>
+                    <p>
+                        {{ song.views }}
+                    </p>  
                 </li>
+            </a>
             {% endfor %}
         </ul>
     </div>
