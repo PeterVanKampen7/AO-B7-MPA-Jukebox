@@ -19,7 +19,10 @@ from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
 
-from home.views import home_view
+from home.views import (
+    home_view,
+)
+
 from genre.views import (
     genre_add_view, 
     genre_list_view, 
@@ -27,6 +30,7 @@ from genre.views import (
     genre_edit_view, 
     genre_delete_view,
 )
+
 from artist.views import (
     artist_add_view,
     artist_list_view,
@@ -34,6 +38,7 @@ from artist.views import (
     artist_edit_view,
     artist_delete_view,
 )
+
 from song.views import (
     song_add_view,
     song_list_view,
@@ -41,6 +46,7 @@ from song.views import (
     song_edit_view,
     song_delete_view,
 )
+
 from playlist.views import (
     playlist_add_view,
     playlist_list_view,
@@ -48,6 +54,7 @@ from playlist.views import (
     playlist_edit_view,
     playlist_delete_view,
 )
+
 from song_queue.views import (
     queue_detail,
 )

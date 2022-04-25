@@ -321,6 +321,15 @@ li.detail_song_list_item p{
 .current_song_in_list{
     background-color: crimson!important;
     color: white;
+    position: relative;
+}
+.current_song_in_list:before{
+    /* position: absolute;
+    right: 0; */
+
+    content: 'f8a5';
+    font-family: "Font Awesome 6 Brands";
+    font-weight: 400;
 }
 .queue_buttons{
     display: flex;
@@ -331,3 +340,4 @@ input#new_playlist_name{
     position: relative;
     top: 3px;
 }
+
