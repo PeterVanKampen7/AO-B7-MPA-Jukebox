@@ -25,8 +25,9 @@ class SongQueue():
         request.session.modified = True
 
     @staticmethod
-    def saveAsPlaylist(song_id_list, playlist_name):
+    def saveAsPlaylist(song_id_list, playlist_name, user):
         new = Playlist(name = playlist_name)
+        new.user = user
         new.save()
 
         for song_id in song_id_list:

@@ -10,7 +10,8 @@ def playlist_add_view(request):
     form = PlaylistForm(request.POST or None)
 
     if form.is_valid():
-        form.save()
+        playlist = form.save()
+        playlist.set_user(request.user)
         return redirect('/playlist')
 
     context = {
@@ -40,6 +41,7 @@ def playlist_detail_view(request, playlist_id):
 
     return render(request, 'playlist/playlist_detail.html', context)
 
+@login_required
 def playlist_edit_view(request, playlist_id):
     obj = get_object_or_404(Playlist, id=playlist_id)  
 
