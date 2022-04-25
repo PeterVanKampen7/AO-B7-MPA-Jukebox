@@ -28,7 +28,7 @@ class SongQueue():
     def saveAsPlaylist(song_id_list, playlist_name):
         new = Playlist(name = playlist_name)
         new.save()
-        
-        for loop_id in song_id_list:
-            new.songs.add(get_object_or_404(Song, id = loop_id))
+
+        for song_id in song_id_list:
+            new.songs.add(get_object_or_404(Song, id = song_id))
         new.save()

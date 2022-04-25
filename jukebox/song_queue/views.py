@@ -8,6 +8,10 @@ def queue_detail(request):
         if len(request.session['queue']) - 1 > request.session['queue_index']:
             request.session['queue_index'] += 1
 
+    if request.POST.get('previous_song',''):
+        if 0 < request.session['queue_index']:
+            request.session['queue_index'] -= 1
+
     if request.POST.get('clear_queue',''):
         SongQueue.clearQueue(request)
 

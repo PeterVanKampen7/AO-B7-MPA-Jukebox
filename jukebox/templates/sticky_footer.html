@@ -1,4 +1,15 @@
 <div class="sticky_footer">
+
+    {% if  current_song %}
+        <div class='queue_control'>
+            <form action="{% url 'queue_detail' %}" method='POST'>
+                {% csrf_token %}
+                <button type="submit" name='previous_song' value='previous'>
+                    <i class="fa-solid fa-backward"></i>
+                </button>
+            </form> 
+        </div>
+    {% endif %}
     
     <a href="{% url 'queue_detail' %}">
         
