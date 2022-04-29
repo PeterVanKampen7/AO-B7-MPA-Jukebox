@@ -248,6 +248,13 @@ li.detail_song_list_item p{
     margin-top: 1rem;
 }
 
+li.detail_song_list_item i{
+    background-color: crimson;
+    color: white;
+    padding: 5px;
+    border-radius: 3px;
+}
+
 .sticky_footer{
     position: fixed;
     bottom: 0;

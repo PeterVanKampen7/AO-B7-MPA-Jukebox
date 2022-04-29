@@ -18,21 +18,18 @@
                         Name:
                     </b>              
                 </p>
-                <p>
-                    <b>
-                        Views:
-                    </b>           
-                </p>
             </li>
             {% for song in object.songs.all %}
             <a href="{{ song.get_absolute_url }}" class='detail_song_list_link'>
                 <li class='detail_song_list_item'>
-                    <p>
-                        {{ song.name }}
+                    <p class='detail_song_list_item_name'>
+                        {{ song.name }}    
                     </p>
                     <p>
-                        {{ song.views }}
-                    </p>  
+                        <a class='playlist_delete_song' href="/playlist/{{ object.id }}?playlist_id={{ object.id }}&removed_song={{ song.id }}">
+                            <i class="fa-solid fa-trash-can"></i>
+                        </a>
+                    </p>   
                 </li>
             </a>
             {% endfor %}

@@ -24,15 +24,28 @@ def playlist_add_view(request):
 def playlist_list_view(request):
     queryset = Playlist.objects.all()
 
+    user_playlists = []
+    for playlist in queryset:
+        if playlist.user == request.user:
+            user_playlists.append(playlist)
+
     context = {
         'page_title': 'All playlists',
-        'object_list': queryset,
+        'object_list': user_playlists,
     }
 
     return render(request, 'playlist/playlist_list.html', context)
 
 def playlist_detail_view(request, playlist_id):
     obj = get_object_or_404(Playlist, id=playlist_id)
+
+    if obj.user != request.user:
+        return redirect('/')
+
+    if request.GET.get('removed_song', '') and request.GET.get('playlist_id', ''):
+        obj.songs.remove(request.GET.get('removed_song', ''))
+        obj.save()
+        return redirect(f'/playlist/{obj.id}')
 
     context = {
         'page_title': f"Playlist - {obj.name}",
