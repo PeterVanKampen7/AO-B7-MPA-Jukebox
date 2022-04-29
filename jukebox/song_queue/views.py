@@ -18,18 +18,22 @@ def queue_detail(request):
     if request.POST.get('save_queue',''):
         playlist = SongQueue.saveAsPlaylist(request.session['queue'], request.POST.get('new_playlist_name', ''), request.user)
         return redirect(f'/playlist/{playlist.id}')
+
+    if request.GET.get('delete_entry', ''):
+        SongQueue.removeFromQueue(request, request.GET.get('delete_entry', ''))
+        return redirect('/song_queue')
         
 
-    song_id_list = request.session['queue'] or None
-    song_list = []
-
-    if song_id_list is not None:
+    try:
+        song_id_list = request.session['queue'] or None
+        song_list = []
+    
         for song_id in song_id_list:
             song_list.append(get_object_or_404(Song, id=song_id))
 
         current_song_index = request.session['queue_index']
-        current_song = song_list[current_song_index]
-    else:
+        current_song = song_list[current_song_index]  
+    except:
         return redirect('/')
 
     context = {

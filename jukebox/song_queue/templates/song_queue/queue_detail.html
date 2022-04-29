@@ -18,12 +18,22 @@
                 
                 {% if forloop.counter0 == current_song_index %}
                     <li class='current_song_in_list'>
-                        {{ song.name }}
+                        <a href="{{ song.get_absolute_url }}">
+                            {{ song.name }}
+                        </a>
+                        <a href="/song_queue/?delete_entry={{ forloop.counter0 }}">
+                            <i class="fa-solid fa-trash"></i>
+                        </a>
                     </li> 
                 {% else %}
-                    <li>
+                <li>
+                    <a href="{{ song.get_absolute_url }}">
                         {{ song.name }}
-                    </li> 
+                    </a>
+                    <a href="/song_queue/?delete_entry={{ forloop.counter0 }}">
+                        <i class="fa-solid fa-trash"></i>
+                    </a>
+                </li> 
                 {% endif %}
         
             {% endfor %}

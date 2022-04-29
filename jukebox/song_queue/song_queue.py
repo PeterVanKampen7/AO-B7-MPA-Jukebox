@@ -35,3 +35,9 @@ class SongQueue():
         new.save()
 
         return new
+
+    @staticmethod
+    def removeFromQueue(request, index):
+        request.session['queue'].pop(int(index))
+
+        request.session.modified = True

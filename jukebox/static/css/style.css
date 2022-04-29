@@ -323,14 +323,6 @@ li.detail_song_list_item p{
     color: white;
     position: relative;
 }
-.current_song_in_list:before{
-    /* position: absolute;
-    right: 0; */
-
-    content: 'f8a5';
-    font-family: "Font Awesome 6 Brands";
-    font-weight: 400;
-}
 .queue_buttons{
     display: flex;
     flex-direction: row;
@@ -341,3 +333,17 @@ input#new_playlist_name{
     top: 3px;
 }
 
+.queue_left_column ul li{
+    display: flex;
+    justify-content: space-between;
+}
+.queue_left_column ul li a{
+    text-decoration: none;
+    color: black
+}
+.queue_left_column ul li.current_song_in_list a{
+    color: white;
+}
+.queue_left_column ul li a i{
+    margin-right: 10px;
+}
