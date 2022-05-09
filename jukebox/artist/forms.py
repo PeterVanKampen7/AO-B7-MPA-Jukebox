@@ -8,7 +8,6 @@ class ArtistForm(forms.ModelForm):
         fields = [
             'name',
             'description',
-            'nationality',
             'image'
         ]
 
