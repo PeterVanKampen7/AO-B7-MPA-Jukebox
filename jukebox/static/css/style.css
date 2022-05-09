@@ -446,7 +446,6 @@ h5.add_new_song_title{
     padding-top: 20px;
 }
 .homepage_featured_container{
-    flex-grow: 1;
     width: 33%;
     margin: 10px;
     border: 1px solid crimson;
@@ -489,6 +488,9 @@ h5.add_new_song_title{
 }
 .homepage_featured_container li p{
     margin: 0;
+}
+.homepage_featured_container li p span{
+    font-size: 0.6em;
 }
 .featured_legend{
     border-bottom: 2px solid crimson;
