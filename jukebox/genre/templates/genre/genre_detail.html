@@ -36,7 +36,7 @@
             <li class='detail_song_list_item'>
                 <p>
                     <b>
-                        Name:
+                        Name and Artist:
                     </b>              
                 </p>
                 <p>
@@ -50,7 +50,7 @@
             <a href="{{ song.get_absolute_url }}" class='detail_song_list_link'>
                 <li class='detail_song_list_item'>
                     <p>
-                        {{ song.name }}
+                        {{ song.name }} - {{ song.artist }}
                     </p>
                     <p>
                         {{ song.views }}

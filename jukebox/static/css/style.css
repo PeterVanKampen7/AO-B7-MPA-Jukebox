@@ -431,3 +431,10 @@ h5.add_new_song_title{
     background-color: crimson;
     color: white;
 }
+
+.item_description{
+    display: -webkit-box;
+    -webkit-line-clamp: 5;
+    -webkit-box-orient: vertical;  
+    overflow: hidden;
+}
