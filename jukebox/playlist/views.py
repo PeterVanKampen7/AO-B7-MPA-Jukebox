@@ -1,8 +1,10 @@
+from datetime import datetime, timedelta
 from django.shortcuts import get_object_or_404, render, get_list_or_404, redirect
 from django.contrib.auth.decorators import login_required
 
 from .models import Playlist
 from .forms import PlaylistForm
+from song.models import Song
 
 # Create your views here.
 @login_required
@@ -40,6 +42,10 @@ def playlist_list_view(request):
 def playlist_detail_view(request, playlist_id):
     obj = get_object_or_404(Playlist, id=playlist_id)
 
+    duration = timedelta()
+    for song in obj.songs.all():
+        duration += song.duration
+
     if obj.user != request.user:
         return redirect('/')
 
@@ -48,9 +54,16 @@ def playlist_detail_view(request, playlist_id):
         obj.save()
         return redirect(f'/playlist/{obj.id}')
 
+    if request.GET.get('new_song', ''):
+        obj.songs.add(get_object_or_404(Song, id=request.GET.get('new_song', '')))
+        obj.save()
+        return redirect(f'/playlist/{obj.id}')
+
     context = {
         'page_title': f"Playlist - {obj.name}",
         'object': obj,
+        'full_duration': duration,
+        'songs': Song.objects.all(),
     }
 
     return render(request, 'playlist/playlist_detail.html', context)

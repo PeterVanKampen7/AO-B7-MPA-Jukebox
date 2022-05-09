@@ -1,3 +1,4 @@
+from datetime import timedelta
 from django.db import models
 from django.utils import timezone
 from django.urls import reverse
@@ -10,6 +11,7 @@ from genre.models import Genre
 class Song(models.Model):
     name = models.CharField(max_length=30)
     link = models.CharField(max_length=11)
+    duration = models.DurationField(default=timedelta(days=0,seconds=0,microseconds=0))
 
     views = models.IntegerField(default=0, editable=False)
     dateAdded = models.DateField(default=timezone.now, editable=False) 

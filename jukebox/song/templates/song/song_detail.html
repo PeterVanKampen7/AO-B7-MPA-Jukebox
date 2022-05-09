@@ -11,6 +11,8 @@
             Views: {{ object.views }}
             <br>
             Date added: {{ object.dateAdded }}
+            <br>
+            Duration: {{ object.duration }}
         </p>
         <form action="{{ object.get_absolute_url }}" method='POST'>
             {% csrf_token %}

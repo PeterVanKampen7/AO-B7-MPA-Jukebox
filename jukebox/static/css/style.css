@@ -285,6 +285,9 @@ li.detail_song_list_item i{
     padding: 5px;
     border-radius: 3px;
 }
+p.detail_song_list_item_name span{
+    font-size: 0.6em;
+}
 
 .sticky_footer{
     position: fixed;
@@ -403,6 +406,27 @@ input#new_playlist_name{
 .login_content button[type='submit'], .register_content button[type='submit']{
     margin: 15px auto;
     padding: 10px;
+    border: none;
+    background-color: crimson;
+    color: white;
+}
+
+.playlist_duration{
+    font-size: 0.8em;
+}
+h5.add_new_song_title{
+    margin-top: 35px;
+}
+.playlist_new_song_form{
+    display: inline-flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 50%;
+    max-width: 350px;
+    margin-top: 10px;
+}
+.playlist_new_song_form input[type='submit']{
+    padding: 7px;
     border: none;
     background-color: crimson;
     color: white;

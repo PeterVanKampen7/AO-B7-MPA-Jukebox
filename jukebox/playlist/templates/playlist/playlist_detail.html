@@ -20,20 +20,38 @@
                 </p>
             </li>
             {% for song in object.songs.all %}
-            <a href="{{ song.get_absolute_url }}" class='detail_song_list_link'>
-                <li class='detail_song_list_item'>
-                    <p class='detail_song_list_item_name'>
-                        {{ song.name }}    
-                    </p>
-                    <p>
-                        <a class='playlist_delete_song' href="/playlist/{{ object.id }}?playlist_id={{ object.id }}&removed_song={{ song.id }}">
-                            <i class="fa-solid fa-trash-can"></i>
-                        </a>
-                    </p>   
-                </li>
-            </a>
+                <a href="{{ song.get_absolute_url }}" class='detail_song_list_link'>
+                    <li class='detail_song_list_item'>
+                        <p class='detail_song_list_item_name'>
+                            {{ song.name }}    
+                            <span>{{ song.duration }}</span>               
+                        </p>
+                        <p>
+                            <a class='playlist_delete_song' href="/playlist/{{ object.id }}?playlist_id={{ object.id }}&removed_song={{ song.id }}">
+                                <i class="fa-solid fa-trash-can"></i>
+                            </a>
+                        </p>   
+                    </li>
+                </a>
             {% endfor %}
         </ul>
+
+        <p class='playlist_duration'>
+            Full playlist duration: {{ full_duration }}
+        </p>
+        
+        <h5 class='add_new_song_title'>Add new song</h5>
+        <form action="{{ object.get_absolute_url }}" method='GET' class='playlist_new_song_form'>
+            {% csrf_token %}
+
+            <select name="new_song" id="new_song">
+                {% for single in songs %}
+                    <option value="{{ single.id }}">{{ single.name }}</option>
+                {% endfor %}
+            </select>
+
+            <input type="submit" value="Add new song" name='new_song_submit'>
+        </form>
     </div>
     <div class="detail_right_column">
         <div class="edit_controls_container">

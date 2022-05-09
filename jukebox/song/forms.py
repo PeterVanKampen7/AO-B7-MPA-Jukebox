@@ -10,6 +10,7 @@ class SongForm(forms.ModelForm):
         model = Song
         fields = [
             'name',
+            'duration',
             'link',
             'artist',
             'genre',
