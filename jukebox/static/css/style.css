@@ -11,7 +11,35 @@
 
 .header_link{
     text-decoration: none;
+
+    display: flex;
+    gap: 10px;
+    flex-grow: 1;
+
+    color: white;
 }
+.header_link:hover{
+    color: white;
+}
+
+.account_buttons{
+    display: flex;
+    flex-direction: row!important;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-decoration: none;
+}
+.account_buttons:hover{
+    color: white;
+}
+
+.nav_account_btn i{
+    color: white;
+    font-size: 1.5em;
+    margin-right: 20px;
+}
+
 .top_header{
     width: 100%;
 
@@ -23,6 +51,9 @@
 
     background-color: crimson;
     color: white;
+
+    display: flex;
+    flex-direction: row;
 }
 .top_header div{
     display: flex;
@@ -353,4 +384,26 @@ input#new_playlist_name{
 }
 .queue_left_column ul li a i{
     margin-right: 10px;
+}
+
+.login_content, .register_content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    padding: 20px;
+}
+.login_content h2, .register_content h2{
+    padding-bottom: 15px;
+}
+.login_content form, .register_content form{
+    display: flex;
+    flex-direction: column;
+}
+.login_content button[type='submit'], .register_content button[type='submit']{
+    margin: 15px auto;
+    padding: 10px;
+    border: none;
+    background-color: crimson;
+    color: white;
 }

@@ -1,5 +1,5 @@
-<a href="{% url 'home' %}" class='header_link'>
-    <header class="top_header">
+<header class="top_header">
+    <a href="{% url 'home' %}" class='header_link'>
         <div class='font_a_logo'>
             <i class="fa-brands fa-spotify"></i>
         </div>
@@ -9,10 +9,23 @@
             </h1>
             <p>The playlist hotspot</p>
         </div>
+    </a>
+    <div class='account_buttons'>
+        {% if not user.is_authenticated %}
+            <a href="{% url 'login' %}" class='nav_account_btn'>
+                <i class="fa-solid fa-right-to-bracket"></i>
+            </a>
+        {% else %}
+            <a href="{% url 'profile' %}" class='nav_account_btn'>
+                <i class="fa-solid fa-user"></i>
+            </a>
+            <a href="{% url 'logout' %}" class='nav_account_btn'>
+                <i class="fa-solid fa-right-from-bracket"></i>
+            </a>
+        {% endif %}
         
-    </header>
-</a>
-
+    </div>
+</header>
 
 <nav class="top_nav">
     <ul>

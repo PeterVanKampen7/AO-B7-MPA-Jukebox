@@ -21,6 +21,7 @@ def playlist_add_view(request):
 
     return render(request, 'playlist/playlist_add.html', context)
 
+@login_required
 def playlist_list_view(request):
     queryset = Playlist.objects.all()
 

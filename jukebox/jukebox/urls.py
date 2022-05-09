@@ -21,6 +21,8 @@ from django.conf.urls.static import static
 
 from home.views import (
     home_view,
+    user_profile_view,
+    user_registration_view,
 )
 
 from genre.views import (
@@ -90,6 +92,8 @@ urlpatterns = [
     
     path('admin/', admin.site.urls),
     path("accounts/", include("django.contrib.auth.urls")),
+    path('accounts/profile/', user_profile_view, name='profile'), 
+    path('accounts/new/', user_registration_view, name='registration'),
 ]
 
 if settings.DEBUG:
