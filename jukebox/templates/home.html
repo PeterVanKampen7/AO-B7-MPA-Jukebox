@@ -2,6 +2,88 @@
 
 {% block content %}
 
-
+<div class="homepage_content">
+    <div class='featured_songs homepage_featured_container'>
+        <div class="homepage_featured_header">
+            Most popular songs
+        </div>
+        <ul>
+            <li class='featured_legend'>
+                <p>
+                    Name
+                </p>
+                <p>
+                    Views
+                </p>
+            </li>
+            {% for song in songs %}
+            <a href="{{ song.get_absolute_url }}">
+                <li>
+                    <p>
+                        {{ song.name }}
+                    </p>
+                    <p>
+                        {{ song.views }}
+                    </p>
+                </li>
+            </a>  
+            {% endfor %}
+        </ul>    
+    </div>
+    <div class='featured_artists homepage_featured_container'>
+        <div class="homepage_featured_header">
+            Most popular artists
+        </div>
+        <ul>
+            <li class='featured_legend'>
+                <p>
+                    Name
+                </p>
+                <p>
+                    Clicks
+                </p>
+            </li>
+            {% for artist in artists %}
+            <a href="{{ artist.get_absolute_url }}">
+                <li>
+                    <p>
+                        {{ artist.name }}
+                    </p>
+                    <p>
+                        {{ artist.clicks }}
+                    </p>
+                </li>
+            </a>  
+            {% endfor %}
+        </ul> 
+    </div>
+    <div class='featured_genres homepage_featured_container'>
+        <div class="homepage_featured_header">
+            Most popular genres
+        </div>
+        <ul>
+            <li class='featured_legend'>
+                <p>
+                    Name
+                </p>
+                <p>
+                    Clicks
+                </p>
+            </li>
+            {% for genre in genres %}
+            <a href="{{ genre.get_absolute_url }}">
+                <li>
+                    <p>
+                        {{ genre.name }}
+                    </p>
+                    <p>
+                        {{ genre.clicks }}
+                    </p>
+                </li>
+            </a>  
+            {% endfor %}
+        </ul> 
+    </div>
+</div>
 
 {% endblock %}

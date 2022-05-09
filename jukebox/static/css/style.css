@@ -438,3 +438,58 @@ h5.add_new_song_title{
     -webkit-box-orient: vertical;  
     overflow: hidden;
 }
+
+.homepage_content{
+    display: flex;
+    flex-direction: row;
+
+    padding-top: 20px;
+}
+.homepage_featured_container{
+    flex-grow: 1;
+    width: 33%;
+    margin: 10px;
+    border: 1px solid crimson;
+    border-radius: 10px;
+    overflow: hidden;
+}
+.homepage_featured_header{
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 15px 0;
+    margin-bottom: 5px;
+
+    background-color: crimson;
+    color: white;
+
+    font-weight: bold;
+    font-size: 1.45em;
+}
+.homepage_featured_container ul{
+    list-style: none;
+    padding: 0;
+}
+.homepage_featured_container a{
+    text-decoration: none;
+    color: #1b1b1b
+}
+.homepage_featured_container li{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 10px;
+    padding: 10px 0px;
+}
+.homepage_featured_container a:not(:last-child) li{
+    border-bottom: 1px solid crimson;
+}
+.homepage_featured_container li p{
+    margin: 0;
+}
+.featured_legend{
+    border-bottom: 2px solid crimson;
+}

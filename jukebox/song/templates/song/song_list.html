@@ -8,6 +8,7 @@
         <div class="card" style="width: 20%;">
             <div class="card-body">
               <h5 class="card-title">{{ song.name }}</h5>
+              <p class="card-text">{{ song.artist }}</p>
               <p class="card-text">{{ song.description }}</p>
               <a href="{{ song.get_absolute_url }}" class="btn">Details</a>
             </div>
