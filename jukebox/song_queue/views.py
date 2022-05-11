@@ -5,10 +5,10 @@ from song_queue.song_queue import SongQueue
 # Create your views here.
 def queue_detail(request):
     if request.POST.get('next_song',''):
-        SongQueue.nextSong()
+        SongQueue.nextSong(request)
 
     if request.POST.get('previous_song',''):
-        SongQueue.prevSong()
+        SongQueue.prevSong(request)
 
     if request.POST.get('clear_queue',''):
         SongQueue.clearQueue(request)

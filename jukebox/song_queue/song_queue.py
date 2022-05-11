@@ -22,10 +22,14 @@ class SongQueue():
         if len(request.session['queue']) - 1 > request.session['queue_index']:
             request.session['queue_index'] += 1
 
+            request.session.modified = True
+
     @staticmethod
     def prevSong(request):
         if 0 < request.session['queue_index']:
             request.session['queue_index'] -= 1
+
+            request.session.modified = True
 
     @staticmethod
     def clearQueue(request):
