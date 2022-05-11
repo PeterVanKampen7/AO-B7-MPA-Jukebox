@@ -45,6 +45,8 @@ INSTALLED_APPS = [
     'artist',
     'playlist',
     'song_queue',
+
+    'django_seed',
 ]
 
 MIDDLEWARE = [
