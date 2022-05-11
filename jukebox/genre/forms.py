@@ -3,6 +3,9 @@ from .models import Genre
 
 class GenreForm(forms.ModelForm):
 
+    # Model form for updating and creating a Genre
+    
+    # Define the fields that will show up in the form
     class Meta:
         model = Genre
         fields = [
@@ -11,6 +14,7 @@ class GenreForm(forms.ModelForm):
             'image',
         ]
 
+    # Give the fields extra customizable options, like labels
     name       = forms.CharField(
         label = 'Enter Name:',
         widget = forms.TextInput(
