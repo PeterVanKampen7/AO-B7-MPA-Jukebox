@@ -3,6 +3,9 @@ from .models import Artist
 
 class ArtistForm(forms.ModelForm):
 
+    # Model form for the creation and editing of an artist. 
+    # Includes the name, description and image fields for the user to fill in
+
     class Meta:
         model = Artist
         fields = [
@@ -10,21 +13,3 @@ class ArtistForm(forms.ModelForm):
             'description',
             'image'
         ]
-
-    # name       = forms.CharField(
-    #     label = 'Enter Name:',
-    #     widget = forms.TextInput(
-    #             attrs= {
-    #                 'placeholder': 'Pop/Rock/Jazz'
-    #             }
-    #         )
-    #     )
-
-    # description = forms.CharField(
-    #     label = 'Enter description',
-    #     widget = forms.Textarea(
-    #             attrs = {
-    #                 'placeholder': 'Dit is een genre van muziek...'
-    #             }
-    #         )
-    #     )
