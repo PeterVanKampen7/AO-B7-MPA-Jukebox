@@ -234,6 +234,10 @@
     border-color: #0d6efd!important;
 }
 
+#id_genre{
+    max-height: 20ch;
+    overflow: auto;
+}
 ul#id_genre {
     list-style: none;
     display: flex;
@@ -241,6 +245,7 @@ ul#id_genre {
     flex-wrap: wrap;
 
     padding-left: 5px;
+
 }
 
 ul#id_genre li{
