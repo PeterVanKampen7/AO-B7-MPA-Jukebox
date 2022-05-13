@@ -411,7 +411,7 @@ input#new_playlist_name{
     color: white;
 }
 
-.playlist_duration{
+.playlist_duration, .queue_duration{
     font-size: 0.8em;
 }
 h5.add_new_song_title{
